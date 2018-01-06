@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="8691" started-at="2015-01-05T05:59:08Z" finished-at="2015-01-05T05:59:17Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="8691" started-at="2015-01-05T05:59:08Z" finished-at="2015-01-05T05:59:17Z">
+      <class name="com.testcase.TestPriority">
+        <test-method status="PASS" signature="testCaseMakeDriver()[pri:0, instance:com.testcase.TestPriority@68c17f01]" name="testCaseMakeDriver" duration-ms="6387" started-at="2015-01-05T11:29:08Z" finished-at="2015-01-05T11:29:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseMakeDriver -->
+        <test-method status="PASS" signature="testCaseNavigate()[pri:0, instance:com.testcase.TestPriority@68c17f01]" name="testCaseNavigate" duration-ms="1241" started-at="2015-01-05T11:29:15Z" finished-at="2015-01-05T11:29:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseNavigate -->
+        <test-method status="PASS" signature="testCaseNavigateTwo()[pri:0, instance:com.testcase.TestPriority@68c17f01]" name="testCaseNavigateTwo" duration-ms="847" started-at="2015-01-05T11:29:16Z" finished-at="2015-01-05T11:29:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseNavigateTwo -->
+        <test-method status="PASS" signature="testCaseLogin()[pri:0, instance:com.testcase.TestPriority@68c17f01]" name="testCaseLogin" duration-ms="204" started-at="2015-01-05T11:29:17Z" finished-at="2015-01-05T11:29:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCaseLogin -->
+      </class> <!-- com.testcase.TestPriority -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Report Suite" parallel="false">
+	<test name="Report Test">
+		<classes>
+			<class name="com.testcase.TestPriority" />
+			<class name="com.testcase.FirstTestCase" />
+			<class name="com.testcase.TestAssert" />
+			<class name="com.testcase.TestDependsOnMethod" />
+			<class name="com.testcase.TestEnabled" />
+			<class name="com.testcase.TestPriority" />
+		</classes>
+	</test> <!-- Test -->
+	<test name="Groups">
+		<parameter name="isoCode" value="XDR" />
+		<parameter name="numCode" value="414" />
+		<parameter name="multi" value="414,ABD,RAH" />
+		<groups>
+			<run>
+				<include name="RANDOM"></include>
+			</run>
+		</groups>
+		<classes>
+			<class name="com.testcase.TestGroups" />
+			<class name="com.testcase.TestParameter" />
+		</classes>
+	</test>
+</suite> <!-- Suite -->

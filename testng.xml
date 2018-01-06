@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="First Test Suite" parallel="false">
+	<test name="Functional Testing" enabled="true">
+		<parameter name="isoCode" value="XDR" />
+		<parameter name="numCode" value="414" />
+		<parameter name="multi" value="414,ABD,RAH" />
+		<packages>
+			<package name="com.testcase"></package>
+		</packages>
+	</test>
+</suite> <!-- Suite -->

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CodeMapper" parallel="false" verbose="1">
+	<listeners>
+		<listener class-name="com.listener.Retry"></listener>
+	</listeners>
+	<test name="Test - 2" preserve-order="true">
+		<classes>
+			<class name="com.testCase.TestRetryListener"></class>
+		</classes>
+	</test>
+</suite> <!-- CodeMapper -->
