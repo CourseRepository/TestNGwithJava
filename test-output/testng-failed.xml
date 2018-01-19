@@ -3,14 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.testcase.TestParameter">
+      <class name="com.testcase.TestAssert">
         <methods>
           <include name="testCaseIsoCode"/>
-          <include name="testCaseMultiParamentTwo"/>
-          <include name="testCaseNumCode"/>
-          <include name="testCaseMultiParament"/>
         </methods>
-      </class> <!-- com.testcase.TestParameter -->
+      </class> <!-- com.testcase.TestAssert -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

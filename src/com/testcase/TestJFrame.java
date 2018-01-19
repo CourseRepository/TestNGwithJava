@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 
 import org.testng.annotations.Test;
 
-import com.api.CodeProperties;
-import com.api.CodePropertiesLookup;
+import com.mapper.CodeProperties;
+import com.mapper.CodePropertiesLookup;
 
 public class TestJFrame {
 	
