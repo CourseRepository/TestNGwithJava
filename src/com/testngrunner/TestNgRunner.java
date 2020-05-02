@@ -1,10 +1,12 @@
 package com.testngrunner;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.testng.TestNG;
 import org.testng.xml.XmlClass;
+import org.testng.xml.XmlInclude;
 import org.testng.xml.XmlSuite;
 import org.testng.xml.XmlTest;
 
@@ -27,7 +29,7 @@ public class TestNgRunner {
 		xmlSuite.setName("CodeMapper");
 		xmlSuite.setParallel("false");
 		xmlSuite.setVerbose(1);
-		xmlSuite.addListener("com.testCase.CustomeIsuiteListener");
+		xmlSuite.addListener("com.testcase.CustomeIsuiteListener");
 		
 		XmlTest xmlTest = new XmlTest(xmlSuite);
 		xmlTest.setName("Test - 1");
@@ -37,8 +39,14 @@ public class TestNgRunner {
 		xmlTest.setName("Test - 2");
 		xmlTest.setPreserveOrder("true");
 		
+		/*
+		 * To Include specific methods
+		 * */
+		XmlInclude includeMethod = new XmlInclude("anotherPublicMethodTest");
 		
 		XmlClass publicTestClass = new XmlClass(TestPublicMethod.class);
+		publicTestClass.setIncludedMethods(Arrays.asList(includeMethod));
+		
 		XmlClass staticTestClass = new XmlClass(TestStaticMethod.class);
 		
 		List<XmlClass> list = new ArrayList<XmlClass>();

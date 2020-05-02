@@ -3,9 +3,9 @@ package com.testcase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.api.CodeProperties;
-import com.api.CodePropertiesLookup;
 import com.dataprovider.DataProviderClass;
+import com.mapper.CodeProperties;
+import com.mapper.CodePropertiesLookup;
 
 
 public class TestCSV extends Assert {

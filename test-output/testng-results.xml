@@ -1,29 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1134" started-at="2018-01-19T03:19:40Z" finished-at="2018-01-19T03:19:41Z">
+  <suite name="CodeMapper" duration-ms="45" started-at="2020-05-02T02:01:37Z" finished-at="2020-05-02T02:01:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1134" started-at="2018-01-19T03:19:40Z" finished-at="2018-01-19T03:19:41Z">
-      <class name="com.testcase.TestAssertCodeMapper">
-        <test-method status="PASS" signature="testTimeout()[pri:0, instance:com.testcase.TestAssertCodeMapper@7ca48474]" name="testTimeout" duration-ms="1013" started-at="2018-01-19T08:49:40Z" finished-at="2018-01-19T08:49:41Z">
+    <test name="Test - 2" duration-ms="14" started-at="2020-05-02T02:01:37Z" finished-at="2020-05-02T02:01:37Z">
+      <class name="com.testngclasses.TestPublicMethod">
+        <test-method status="PASS" signature="anotherPublicMethodTest()[pri:0, instance:com.testngclasses.TestPublicMethod@e2d56bf]" name="anotherPublicMethodTest" duration-ms="6" started-at="2020-05-01T19:01:37Z" finished-at="2020-05-01T19:01:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testTimeout -->
-        <test-method status="PASS" signature="testNumericCode()[pri:0, instance:com.testcase.TestAssertCodeMapper@7ca48474]" name="testNumericCode" duration-ms="94" started-at="2018-01-19T08:49:41Z" finished-at="2018-01-19T08:49:41Z">
+        </test-method> <!-- anotherPublicMethodTest -->
+      </class> <!-- com.testngclasses.TestPublicMethod -->
+      <class name="com.testngclasses.TestStaticMethod">
+        <test-method status="PASS" signature="StaticMethodTest()[pri:0, instance:com.testngclasses.TestStaticMethod@9e89d68]" name="StaticMethodTest" duration-ms="0" started-at="2020-05-01T19:01:37Z" finished-at="2020-05-01T19:01:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testNumericCode -->
-        <test-method status="PASS" signature="testMinorUnit()[pri:0, instance:com.testcase.TestAssertCodeMapper@7ca48474]" name="testMinorUnit" duration-ms="1" started-at="2018-01-19T08:49:41Z" finished-at="2018-01-19T08:49:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testMinorUnit -->
-        <test-method status="PASS" signature="testIsoCode()[pri:0, instance:com.testcase.TestAssertCodeMapper@7ca48474]" name="testIsoCode" duration-ms="9" started-at="2018-01-19T08:49:41Z" description="Iso Code as Argument" finished-at="2018-01-19T08:49:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testIsoCode -->
-      </class> <!-- com.testcase.TestAssertCodeMapper -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- StaticMethodTest -->
+      </class> <!-- com.testngclasses.TestStaticMethod -->
+    </test> <!-- Test - 2 -->
+    <test name="Command line test c365a86c-e641-44ba-bea5-92e3e57cab6a" duration-ms="0" started-at="2020-05-02T02:01:37Z" finished-at="2020-05-02T02:01:37Z">
+    </test> <!-- Command line test c365a86c-e641-44ba-bea5-92e3e57cab6a -->
+  </suite> <!-- CodeMapper -->
 </testng-results>

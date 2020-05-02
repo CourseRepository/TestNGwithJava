@@ -2,9 +2,9 @@ package com.testcase;
 
 import org.testng.annotations.Test;
 
-import com.api.CodeProperties;
-import com.api.CodePropertiesLookup;
 import com.customeassert.CustomeVerify;
+import com.mapper.CodeProperties;
+import com.mapper.CodePropertiesLookup;
 
 public class TestCustomeAssert {
 	

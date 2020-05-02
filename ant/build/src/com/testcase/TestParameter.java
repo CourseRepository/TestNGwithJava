@@ -4,8 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.api.CodeProperties;
-import com.api.CodePropertiesLookup;
+import com.mapper.CodeProperties;
+import com.mapper.CodePropertiesLookup;
 
 
 public class TestParameter extends Assert {

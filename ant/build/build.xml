@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 <project name="TestNg Test" default="test" basedir=".">
-
+	
+	<property name="workspace" value="C:\Data\GitHub\TestNGwithJava" />
+	<property name="ws.jars" value="${workspace}/lib" />
+	
 	<target  name="delete">
 		<delete failonerror="false" dir="bin" />
 		<delete failonerror="false" dir="src" />
@@ -16,23 +19,20 @@
 	</target>
 
 	<target name="copy" depends="create">
-		<copydir dest="C:\Users\rathr1\workspace2\TestNG\ant\build\src" src="C:\Users\rathr1\workspace2\TestNG\src" excludes="**/lib/**">
+		<copydir dest="${workspace}\ant\build\src" src="${workspace}\src" excludes="**/lib/**">
 		</copydir>
-		<copy todir="C:\Users\rathr1\workspace2\TestNG\ant\build\lib" overwrite="true">
-			<fileset dir="C:\Users\rathr1\workspace2\TestNG\src\com\lib" includes="**/*.jar">
+		<copy todir="${workspace}\ant\build\lib" overwrite="true">
+			<fileset dir="${workspace}\src\com\lib" includes="**/*.jar">
 			</fileset>
 		</copy>
-		<copy todir="C:\Users\rathr1\workspace2\TestNG\ant\build" overwrite="true">
-			<fileset dir="C:\Users\rathr1\workspace2\TestNG" includes="testng.xml">
+		<copy todir="${workspace}\ant\build" overwrite="true">
+			<fileset dir="${workspace}" includes="testng.xml">
 			</fileset>
 		</copy>
 	</target>
 
 	<path id="classpath">
-		<pathelement location="lib/CodeMapper.jar" />
-		<pathelement location="lib/selenium-server-standalone-2.44.0.jar" />
-		<pathelement location="lib/testng-6.8.jar" />
-		<pathelement location="lib/javacsv-2.0.jar" />
+		<fileset dir="${ws.jars}" includes="*.jar"/>
 		<pathelement location="bin"/>
 	</path>
 
@@ -40,11 +40,11 @@
 	</taskdef>
 
 	<target name="compile" depends="copy">
-		<javac classpathref="classpath"  includeantruntime="true" srcdir="C:\Users\rathr1\workspace2\TestNG\ant\build\src" destdir="C:\Users\rathr1\workspace2\TestNG\ant\build\bin" includes="**/*.java">
+		<javac classpathref="classpath"  includeantruntime="true" srcdir="${workspace}\ant\build\src" destdir="${workspace}\ant\build\bin" includes="**/*.java">
 		</javac>
 	</target>
 
-	<target name="test" depends="compile">
+	<target name="test" depends="compile" >
 		<TestNG-Ant outputdir="test-output" classpathref="classpath">
 			<xmlfileset dir="." includes="testng.xml"/>
 		</TestNG-Ant>

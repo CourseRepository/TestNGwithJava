@@ -1,64 +1,86 @@
 package com.testcase;
 
+import java.util.Locale;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.api.CodeProperties;
-import com.api.CodePropertiesLookup;
+import com.mapper.CodeProperties;
+import com.mapper.CodePropertiesLookup;
 
 
-public class TestGroups extends Assert{
+public class TestGroups {
 	
-	private CodeProperties prop = null;
-	
-	@Test(groups={"ISOCODE"})
-	public void testCaseKWD() {
-		prop = CodePropertiesLookup.getCodeProperties("KWD");
-		assertEquals("KWD", prop.getSymbol());
-		assertEquals("414", prop.getCurrencyCode());
-		assertEquals("Kuwaiti Dinar", prop.getCurrencyName());
-		assertEquals(3, prop.getFractionDigits());
-		
-	}
+	public CodeProperties code = null;
 	
 	@Test(groups={"ISOCODE"})
-	public void testCaseCLF() {
-		prop = CodePropertiesLookup.getCodeProperties("CLF");
-		assertEquals("CLF", prop.getSymbol());
-		assertEquals("990", prop.getCurrencyCode());
-		assertEquals("Unidad de Fomento", prop.getCurrencyName());
-		assertEquals(0, prop.getFractionDigits());
+	public void testNumericCode(){
+		String isoCode[] = {"AOA","XOF","XDR","KWD","CLF","CHW","SSP","CLF","CHW","UYI","XBB","XBC"};
+		String expected[] = {"973","952","960","414","990","948","728","990","948","940","956","957"};
+		String actual[] = new String[isoCode.length];
 		
+		for(int i = 0; i<isoCode.length; i++){
+			code = CodePropertiesLookup.getCodeProperties(isoCode[i]);
+			actual[i] = code.getCurrencyCode();
+		}
+		
+		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test(groups={"NUMCODE"})
-	public void testCase728() {
-		prop = CodePropertiesLookup.getCodeProperties("728");
-		assertEquals("SSP", prop.getSymbol());
-		assertEquals("728", prop.getCurrencyCode());
-		assertEquals("South Sudanese Pound", prop.getCurrencyName());
-		assertEquals(2, prop.getFractionDigits());
+	@Test(groups={"ISOCODE"})
+	public void testMinorUnit(){
+		String isoCode[] = {"AOA","XOF","XDR","KWD","CLF","CHW","SSP","CLF","CHW","UYI","XBB","XBC"};
+		int expected[] = {2,0,-1,3,0,2,2,0,2,0,-1,-1};
+		int actual[] = new int[isoCode.length];
 		
+		for(int i = 0; i<isoCode.length; i++){
+			code = CodePropertiesLookup.getCodeProperties(isoCode[i]);
+			actual[i] = code.getFractionDigits();
+		}
+		
+		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test(groups="NUMCODE")
-	public void testCase956() {
-		prop = CodePropertiesLookup.getCodeProperties("956");
-		assertEquals("XBB", prop.getSymbol());
-		assertEquals("956", prop.getCurrencyCode());
-		assertEquals("Bond Markets Unit European Monetary Unit (E.M.U.-6)", prop.getCurrencyName());
-		assertEquals(-1, prop.getFractionDigits());
+	@Test(groups={"LOCALE"})
+	public void testLocaleName(){
+		Locale[] locale = {Locale.CANADA,Locale.CHINA,Locale.FRANCE,Locale.KOREA};
+		String expected[] = {"Canadian Dollar","Yuan Renminbi","Euro","Won"};
+		String actual[] = new String[locale.length];
 		
+		for(int i = 0; i<locale.length; i++){
+			code = CodePropertiesLookup.getCodeProperties(locale[i]);
+			actual[i] = code.getCurrencyName();
+		}
+		
+		Assert.assertEquals(actual, expected);
 	}
 	
-	@Test(groups="RANDOM",dependsOnGroups={"NUMCODE","ISOCODE"})
-	public void testCase() {
-		prop = CodePropertiesLookup.getCodeProperties("956");
-		assertEquals("XBB", prop.getSymbol());
-		assertEquals("956", prop.getCurrencyCode());
-		assertEquals("Bond Markets Unit European Monetary Unit (E.M.U.-6)", prop.getCurrencyName());
-		assertEquals(-1, prop.getFractionDigits());
+	@Test(groups={"GRP"})
+	public void testLocaleName2(){
+		Locale[] locale = {Locale.CANADA,Locale.CHINA,Locale.FRANCE,Locale.KOREA};
+		String expected[] = {"Canadian Dollar","Yuan Renminbi","Euro","Won"};
+		String actual[] = new String[locale.length];
 		
+		for(int i = 0; i<locale.length; i++){
+			code = CodePropertiesLookup.getCodeProperties(locale[i]);
+			actual[i] = code.getCurrencyName();
+		}
+		
+		Assert.assertEquals(actual, expected);
+	}
+	
+	@Test(groups={"LOCALE"},dependsOnGroups={"ISOCODE","GRP"})
+	public void testLocaleSymbol(){
+		Locale[] locale = {Locale.CANADA,Locale.CHINA,Locale.FRANCE,Locale.KOREA};;
+		String expected[] = {"CAD","CNY","EUR","KRW"};
+		String actual[] = new String[locale.length];
+		
+		for(int i = 0; i<locale.length; i++){
+			code = CodePropertiesLookup.getCodeProperties(locale[i]);
+			actual[i] = code.getSymbol();
+		}
+		
+		Assert.assertEquals(actual, expected);
 	}
 
 }

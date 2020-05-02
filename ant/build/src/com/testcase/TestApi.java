@@ -1,8 +1,7 @@
 package com.testcase;
 
-import com.api.CodeProperties;
-import com.api.CodePropertiesLookup;
-
+import com.mapper.CodeProperties;
+import com.mapper.CodePropertiesLookup;
 
 public class TestApi {
 

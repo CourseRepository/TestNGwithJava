@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.testcase.TestAssert">
+      <class name="com.testcase.FirstTestCase">
         <methods>
-          <include name="testCaseIsoCode"/>
+          <include name="testCasegetDataTwo"/>
+          <include name="testCasegetData"/>
         </methods>
-      </class> <!-- com.testcase.TestAssert -->
+      </class> <!-- com.testcase.FirstTestCase -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
