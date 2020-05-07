@@ -28,6 +28,7 @@ public class TestNgRunner {
 		XmlSuite xmlSuite = new XmlSuite();
 		xmlSuite.setName("CodeMapper");
 		xmlSuite.setParallel("false");
+		//xmlSuite.setParallel(XmlSuite.PARALLEL_METHODS);
 		xmlSuite.setVerbose(1);
 		xmlSuite.addListener("com.testcase.CustomeIsuiteListener");
 		
